@@ -1,5 +1,5 @@
 {
-  "name": "SneakersLoop",
+  "name": "sneakersloop",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -18,8 +18,10 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "googleapis": "^89.0.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "nodemailer": "^6.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"
