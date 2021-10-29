@@ -58,12 +58,11 @@ const productCtrl = {
 
             const products = await features.query
 
-            /*res.json({
+            res.json({
                 status: 'success',
                 result: products.length,
                 products: products
-            })*/
-            res.json(products)
+            })
 
         } catch (err) {
             return res.status(500).json({ msg: err.message })
