@@ -1,0 +1,129 @@
+{ 
+    "products":[
+    {
+    "_id":1,
+    "title": "Nike Blazer Low '77",
+    "images": "images/nike-BLAZER_LOW_77-WHITE_BLACK_WHITE_SAIL-1.jpg",
+    "desription":"100,0% Leather",
+    "price": 90,
+    "size": ["40", "41", "42", "43"],
+    "inStock": true,
+    "category": "men",
+    "checked":"true"
+    },
+    {
+    "_id":2,
+    "title": "Nike Air More Uptempo",
+    "img": "images/nike-AIR_MORE_UPTEMPO_GS-BLACK_BLACK_UNIVERSITY_RED_WHITE-1.jpg",
+    "desc":"56,0% Leather, 44,0% Synthetic",
+    "price": 110,
+    "size": ["34", "36", "37", "38"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+
+
+    {
+    "_id":3,
+    "title": "CONVERSE SPACE JAM CHUCK 70 UNISEX",
+    "img": "images/converse-SPACE_JAM_CHUCK_70_UNISEX-Black-1.jpg",
+    "desc":"100% RUBBER",
+    "price": 110.9,
+    "size": ["40", "41", "42", "43"],
+    "color": ["black", "White"],
+    "inStock": true
+
+    },
+
+    {
+    "_id":4,
+    "title": "AIR JORDAN 7 RETRO BCFC",
+    "img": "images/AIR_JORDAN_7_RETRO_BCFC-WHITE_UNIVERSITY_RED_COLLEGE_NAVY-1.jpg",
+    "desc":"48,0% Leather, 30,0% Synthetic, 22,0% Textile",
+    "price": 185.9,
+    "size": ["40", "41", "42", "43"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":5,
+    "title": "NIKE AIR VAPORMAX 2021 FK",
+    "img": "images/nike-AIR_VAPORMAX_2021_FK-BLACK_BLACK_BLACK_ANTHRACITE-1.webp",
+    "desc":"100% TEXTILE",
+    "price": 210.9,
+    "size": ["40", "41", "42", "43"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":6,
+    "title": "PUMA SUEDE CLASSIC XXI WOMENS",
+    "img": "images/puma-Suede_Classic_XXI_WOMENS-Puma_Black_Puma_White-1.jpg",
+    "desc":"Leather",
+    "price": 80.9,
+    "size": ["34", "36", "37", "38"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":7,
+    "title": "NIKE AIR MAX 95",
+    "img": "images/nike-AIR_MAX_95-SAIL_BLACK_CASHMERE_DK_DRIFTWOOD-1.webp",
+    "desc":"45.0% Leather 31.0% Synthetic 24.0% Textile",
+    "price": 160.9,
+    "size": ["40", "41", "42", "45"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":8,
+    "title": "ADIDAS ORIGINALS NMD_R1 WOMEN",
+    "img": "images/adidas_originals-NMD_R1_WOMEN-CBLACK_CARBON_FTWWHT-1.jpg",
+    "desc":"TEXTILE, SYNTHETIC TEXTILE RUBBER",
+    "price": 140.9,
+    "size": ["34", "36", "37", "38", "40"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":9,
+    "title": "NEW BALANCE BB480",
+    "img": "images/new_balance-BB480-WHITE_NAVY_115-1.webp",
+    "desc":"67% Leather + 33 Syntheic",
+    "price": 90.9,
+    "size": ["44", "45"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":10,
+    "title":"DR. MARTENS 1461 BEX",
+    "img": "images/dr__martens-1461_Bex-Black_Smooth-1.webp",
+    "desc":"100% leather",
+    "price": 175.9,
+    "size": ["41", "42", "43", "44"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":11,
+    "title":"NIKE AIR MAX 90 SE",
+    "img": "images/nike-AIR_MAX_90_SE-SIGNAL_BLUE_WHITE_GAME_ROYAL-1.webp",
+    "desc":"51.0% Leather 3.0% Synthetic 46.0% Textile",
+    "price": 140.9,
+    "sizes": ["41", "42", "43", "44"],
+    "color": ["black", "White"],
+    "inStock": true
+    },
+    {
+    "_id":12,
+    "title":"REEBOK CLUB C REVENGE MU",
+    "img": "images/reebok-CLUB_C_REVENGE_MU-WHITE_GLEGRN_NONE-1.jpg",
+    "desc":"Leather,Synthetic/Textile/Rubber",
+    "price": 90.9,
+    "size": ["41", "42", "43", "44", "45"],
+    "color": ["black", "White"],
+    "inStock": true
+    }
+   ]
+}
