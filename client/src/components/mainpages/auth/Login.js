@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { showErrMsg, showSuccessMsg } from '../../utils/notification/Notification'
-import { dispatchLogin } from '../../../redux/actions/authAction'
+import { dispatchLogin } from '../../../redux/actions/authActions'
 import { useDispatch } from 'react-redux'
 import { GoogleLogin } from 'react-google-login';
 import FacebookLogin from 'react-facebook-login';
