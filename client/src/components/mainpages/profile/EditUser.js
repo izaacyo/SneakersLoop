@@ -3,7 +3,7 @@ import { useParams, useHistory } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 import { showSuccessMsg, showErrMsg } from '../../utils/notification/Notification'
-
+import "./Profile.css"
 
 function EditUser() {
     const { id } = useParams()
