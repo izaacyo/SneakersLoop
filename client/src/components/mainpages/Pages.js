@@ -5,13 +5,13 @@ import Register from './auth/Register'
 import ActivationEmail from './auth/ActivationEmail'
 import NotFound from '../utils/NotFound/NotFound'
 
-import ForgotPass from '../body/auth/ForgotPassword'
-import ResetPass from '../body/auth/ResetPassword'
+import ForgotPass from '../mainpages/auth/ForgotPassword'
+import ResetPass from '../mainpages/auth/ResetPassword'
 
-import Profile from '../body/profile/Profile'
-import EditUser from '../body/profile/EditUser'
+import Profile from '../mainpages/profile/Profile'
+import EditUser from '../mainpages/profile/EditUser'
 
-import Home from '../body/home/Home'
+import Home from '../mainpages/home/Home'
 
 import { useSelector } from 'react-redux'
 

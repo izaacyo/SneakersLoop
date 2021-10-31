@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { isLength, isMatch } from '../../utils/validation/Validation'
 import { showSuccessMsg, showErrMsg } from '../../utils/notification/Notification'
-import { fetchAllUsers, dispatchGetAllUsers } from '../../../redux/actions/usersAction'
+import { fetchAllUsers, dispatchGetAllUsers } from '../../../redux/actions/userActions'
 
 const initialState = {
     name: '',

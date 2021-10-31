@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { dispatchLogin, fetchUser, dispatchGetUser } from './redux/actions/authAction'
+import { dispatchLogin, fetchUser, dispatchGetUser } from './redux/actions/authActions'
 
 import Header from './components/headers/Header'
 import Body from './components/mainpages/Pages'
 import axios from 'axios';
+import Footer from './components/Footer/Footer';
 
 function App() {
     const dispatch = useDispatch()
@@ -42,6 +43,7 @@ function App() {
             <div className="App">
                 <Header />
                 <Body />
+                <Footer />
             </div>
         </Router>
     );
