@@ -5,6 +5,7 @@ export const fetchAllUsers = async (token) => {
     const res = await axios.get('/user/all_infor', {
         headers: { Authorization: token }
     })
+    console.log(res)
     return res
 }
 

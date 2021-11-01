@@ -72,8 +72,8 @@ const linkStyle = {
 }
 
 
-const socialStyle = {
-  /*width: "100%",
+/*const socialStyle = {
+  width: "100%",
   margin: "10px 0",
   height: "50px",
   fontSize: "14px",
@@ -90,7 +90,7 @@ const socialStyle = {
   border: "0px transparent",
   textAlign: "center",*/
 
-}
+
 
 
 const initialState = {
@@ -116,7 +116,7 @@ const Login = () => {
 
 
 
-const handleSubmit = async e => {
+const loginSubmit = async e => {
   e.preventDefault()
   try {
       const res = await axios.post('/user/login', {email, password})
@@ -132,6 +132,20 @@ const handleSubmit = async e => {
       setUser({...user, err: err.response.data.msg, success: ''})
   }
 }
+
+/*const loginSubmit = async e =>{
+  e.preventDefault()
+  try {
+      await axios.post('/user/login', {...user})
+
+      localStorage.setItem('firstLogin', true)
+      
+      window.location.href = "/";
+  } catch (err) {
+      alert(err.response.data.msg)
+  }
+}*/
+
 
 
 const responseGoogle = async (response) => {
@@ -173,7 +187,7 @@ const responseFacebook = async (response) => {
         
         {err && showErrMsg(err)}
         {success && showSuccessMsg(success)}
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={loginSubmit}>
           <Input type="text" 
           id="email"
           name="email"

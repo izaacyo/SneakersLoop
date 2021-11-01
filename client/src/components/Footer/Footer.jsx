@@ -109,13 +109,13 @@ import { Facebook,
                <LinkList>
                 <Link to ="/" style={styledLink}>Home</Link>
                 <Link to="/cart" style={styledLink}>Cart</Link>
-                <Link style={styledLink}>Men</Link>
-                <Link style={styledLink}>Women</Link>
-                <Link style={styledLink}>Kids</Link>
-                <Link style={styledLink}>My Account</Link>
-                <Link style={styledLink}>Order Tracking</Link>
-                <Link style={styledLink}>Wishlist</Link>
-                <Link style={styledLink}>Terms</Link>
+                <Link to = "/" style={styledLink}>Men</Link>
+                <Link to = "/" style={styledLink}>Women</Link>
+                <Link to = "/" style={styledLink}>Kids</Link>
+                <Link to = "/" style={styledLink}>My Account</Link>
+                <Link to = "/" style={styledLink}>Order Tracking</Link>
+                <Link to = "/" style={styledLink}>Wishlist</Link>
+                <Link to = "/" style={styledLink}>Terms</Link>
               </LinkList> 
              </Center>
  

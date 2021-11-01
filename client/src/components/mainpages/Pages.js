@@ -2,6 +2,11 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import Products from './products/Products'
+import DetailProduct from './detailProduct/DetailProduct'
+import Categories from './categories/Categories'
+import CreateProduct from './createProduct/CreateProduct'
+
+
 import Login from './auth/Login'
 import Register from './auth/Register'
 import ActivationEmail from './auth/ActivationEmail'
@@ -15,6 +20,11 @@ import EditUser from '../mainpages/profile/EditUser'
 
 import Home from '../mainpages/home/Home'
 
+import OrderHistory from './history/OrderHistory'
+import OrderDetails from './history/OrderDetails'
+
+import Cart from './cart/Cart'
+
 import { useSelector } from 'react-redux'
 
 function Body() {
@@ -25,7 +35,7 @@ function Body() {
             <Switch>
                 <Route path="/" component={Home} exact />
 
-                <Route path="/" exact component={Products} />
+                <Route path="/products" exact component={Products} />
                 <Route path="/detail/:id" exact component={DetailProduct} />
 
                 <Route path="/login" component={isLogged ? NotFound : Login} exact />

@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {useContext, useState} from 'react'
+import {GlobalState} from '../../GlobalState'
+
 import styled from 'styled-components'
 import {Search} from "@material-ui/icons"
 import {useSelector} from "react-redux"
@@ -69,7 +71,9 @@ const Navbar = () => {
 
     const auth = useSelector( state => state.auth)
 
-    const {user, isLogged} = auth 
+    const {user, isLogged, isAdmin} = auth 
+
+    const [menu, setMenu] = useState(false)
 
 const handleLogout = async () =>  {
 
@@ -84,23 +88,35 @@ const handleLogout = async () =>  {
     }
 }
 
-
 const userLink = () => {
+    return  <li className="drop-nav">
+              <Link style={linkStyle} to="#" className="avatar">
+                 <Img src={user.avatar} alt=""/> {user.name} <i className="fas fa-angle-down"></i>
+              </Link>
+               <ul className="dropdown">
+                 <li><Link to="/profile">Profile</Link></li>
+                 <li><Link to="/history">History</Link></li>
+                  <li><Link to="/" onClick={handleLogout} >Logout</Link></li>
+                   </ul>
+               </li>
+}
 
- return  <li className="drop-nav">
- <Link style={linkStyle} to="#" className="avatar">
- <Img src={user.avatar} alt=""/> {user.name} <i className="fas fa-angle-down"></i>
- </Link>
- <ul className="dropdown">
-     <li><Link to="/profile">Profile</Link></li>
-     <li><Link to="/" onClick={handleLogout} >Logout</Link></li>
- </ul>
-</li>
+const adminRouter = () =>{
+    return(
+        <>
+            <li><Link to="/create_product">Create Product</Link></li>
+            <li><Link to="/category">Categories</Link></li>
+        </>
+    )
 }
 
 
-const transForm = {
+/*const transForm = {
     transform: isLogged ? "translateY(-5px)" : 0
+}*/
+
+const styleMenu = {
+    left: menu ? 0 : "-100%"
 }
 
 return (
@@ -110,7 +126,7 @@ return (
                      EN
                  </Language>
                  <SearchContainer>
-                     <Input placeholder="Search"/>
+                     <Input  type="text"placeholder="Search"/>
                      <Search style={{color:"gray", fontSize:16}}/>
                  </SearchContainer>
              </Left>
@@ -120,18 +136,28 @@ return (
                  </Logo>
                  </Link>
              </Center>
+             
+<Right>
+             <ul style={styleMenu}>
+                <li><Link to="/products">{isAdmin ? 'Products' : 'Shop'}</Link></li>
 
-       <Right>
-        <ul style={transForm}>
-            <li><Link style={{textDecoration:"none"}} to="/"><i className="fas fa-shopping-cart"></i> Cart</Link></li>
+                {isAdmin && adminRouter()}
+
+                {
+                    isLogged ? userLink() :
+                    <li><Link to="/login"><i className="fas fa-user"></i> Sign in</Link></li>
+                }
+
+            </ul>
+
             {
-                isLogged
-                ? userLink()
-                :<li><Link to="/login"><i className="fas fa-user"></i> Sign in</Link></li>
+                isLogged ? '' 
+                :<div className="cart-icon">
+                    <Link style={{textDecoration:"none"}} to="/cart"><i className="fas fa-shopping-cart">
+                             </i></Link>
+                </div>
             }
-            
-        </ul>
-        </Right> 
+            </Right>
     </header>
 )}
 
