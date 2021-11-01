@@ -20,7 +20,7 @@
   white-space: nowrap;
   text-transform: capitalize;
   cursor: pointer;
-  color: #323232;
+  color: #910e0e;
 }
 .product_card span {
   color: crimson;
@@ -32,7 +32,7 @@
   -webkit-line-clamp: 3;
   height: 70px;
   overflow: hidden;
-  color: #323232;
+  color: rgba(255, 166, 0, 0.646);
 }
 .row_btn {
   width: 100%;
@@ -44,17 +44,17 @@
   width: 50%;
   text-align: center;
   text-transform: uppercase;
-  color: white;
+  color: rgba(247, 243, 243, 0.845);
   font-weight: 600;
   letter-spacing: 2px;
   padding: 6px;
 }
 #btn_buy {
-  background: #555;
+  background: rgb(245, 228, 228);
   margin-right: 5px;
 }
 #btn_view {
-  background: teal;
+  background: #55aceeb8;
   margin-left: 5px;
 }
 .product_card input {

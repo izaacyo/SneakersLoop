@@ -27,7 +27,7 @@
 .delete-all button {
   border: 1px solid crimson;
   padding: 10px 25px;
-  color: crimson;
+  color: #55acee00;
   text-transform: uppercase;
 }
 
@@ -44,7 +44,6 @@
 }
 .filter_menu select,
 input {
-  border: 1px solid #ccc;
   outline: none;
   height: 40px;
   padding: 0 5px;
@@ -54,11 +53,11 @@ input {
   margin: 0 10px;
 }
 
-span,
+/*span,
 .row {
   margin-right: 20px;
   margin-left: 20px;
-}
+}*/
 
 /* -------------------- Load More --------------- */
 .load_more {

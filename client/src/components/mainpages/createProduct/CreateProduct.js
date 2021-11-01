@@ -3,6 +3,7 @@ import axios from 'axios'
 import { GlobalState } from '../../../GlobalState'
 import Loading from '../../utils/loading/Loading'
 import { useHistory, useParams } from 'react-router-dom'
+import "./createProduct.css"
 
 const initialState = {
     product_id: '',
@@ -10,6 +11,7 @@ const initialState = {
     price: 0,
     description: '',
     category: '',
+    size: '',
     _id: ''
 }
 
@@ -19,6 +21,7 @@ function CreateProduct() {
     const [categories] = state.categoriesAPI.categories
     const [images, setImages] = useState(false)
     const [loading, setLoading] = useState(false)
+
 
 
     const [isAdmin] = state.userAPI.isAdmin
@@ -161,9 +164,11 @@ function CreateProduct() {
                 </div>
 
                 <div className="row">
-                    <label htmlFor="content">Content</label>
-                    <textarea type="text" name="content" id="content" required
-                        value={product.content} rows="7" onChange={handleChangeInput} />
+                    <label htmlFor="size">Size</label>
+                    <select name="size" value={product.size} onChange={handleChangeInput}  >
+                        <option value={product.size}>Please select sizes available</option>
+
+                    </select>
                 </div>
 
                 <div className="row">
