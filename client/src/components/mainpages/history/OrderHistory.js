@@ -3,12 +3,16 @@ import { GlobalState } from '../../../GlobalState'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import "./history.css"
+import { useSelector } from "react-redux"
+
 
 
 function OrderHistory() {
     const state = useContext(GlobalState)
     const [history, setHistory] = state.userAPI.history
-    const [isAdmin] = state.userAPI.isAdmin
+    const auth = useSelector(state => state.auth)
+    const { isAdmin } = auth
+
     const [token] = state.token
 
 
@@ -35,7 +39,7 @@ function OrderHistory() {
         <div className="history-page">
             <h2>History</h2>
 
-            <h4>You have {history.length} ordered</h4>
+            <h4> {history.length} Orders</h4>
 
             <table>
                 <thead>
