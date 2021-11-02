@@ -25,9 +25,12 @@ const paymentCtrl = {
                 user_id: _id, name, email, cart, paymentID, address
             })
 
+            cart.filter(item => {
+                return sold(item._id, item.quantity, item.sold)
+            })
 
-            console.log(newPayment)
-            res.json({ newPayment })
+            await newPayment.save()
+            res.json({ msg: "Payment Succes!" })
 
         } catch (err) {
             return res.status(500).json({ msg: err.message })

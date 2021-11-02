@@ -207,12 +207,13 @@ function Cart() {
          })
  console.log(cart)
          setCart([])
+         addToCart([])
          alert("You have successfully placed an order.")
      }
 
 
   if (cart.length === 0)
-      return <h2 style={{ textAlign: "center", fontSize: "5rem" }}>Cart Empty</h2>
+      return <h2 style={{ marginTop:"17rem", marginBottom: "10rem", textAlign: "center", fontSize: "5rem" }}>Cart Empty</h2>
 
   return (
 
