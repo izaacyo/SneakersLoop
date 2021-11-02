@@ -226,7 +226,6 @@ function Cart() {
               cart.map(product => (
               <Product key={product._id}>
                   <ProductDetail>
-                      <Image src={product.images.url} alt="" />
 
                       <Details>
                           <ProductName>

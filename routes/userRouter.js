@@ -33,6 +33,12 @@ router.patch('/addcart', auth, userCtrl.addCart)
 router.get('/history', auth, userCtrl.history)
 
 
+// Social Login
+router.post('/google_login', userCtrl.googleLogin)
+
+router.post('/facebook_login', userCtrl.facebookLogin)
+
+
 
 
 

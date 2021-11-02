@@ -1,6 +1,6 @@
 import React from 'react'
 import BtnRender from './BtnRender'
-import styled from "styled-components";
+import styled from "styled-components"
 
 const Info = styled.div`
 opacity: 0;
@@ -55,6 +55,7 @@ const Circle = styled.div`
 
 
 function ProductItem({ product, isAdmin, deleteProduct, handleCheck }) {
+
 
     return (
 

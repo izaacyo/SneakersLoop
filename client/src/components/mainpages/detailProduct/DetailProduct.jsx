@@ -83,15 +83,14 @@ const FilterTitle = styled.span`
 
 `;
 
-const FilterSize = styled.select`
+const FilterSize = styled.div`
   margin-left: 10px;
   padding: 5px;
   margin-top: 3rem
 
 `;
 
-const FilterSizeOption = styled.option`
-`;
+
 
 
 
@@ -126,10 +125,12 @@ function DetailProduct() {
                 if (product._id === params.id) setDetailProduct(product)
             })
         }
-    }, [params.id, products])
+    }, [params.id, size, products])
 
-    if (detailProduct.length === 0) return null;
 
+
+
+    if (detailProduct.length === 0) return "null";
 
     return (
         <Container>
@@ -146,12 +147,19 @@ function DetailProduct() {
                     <Desc>{detailProduct.description}</Desc>
                     <FilterContainer>
                     <Filter>
+
                         <FilterTitle>Size</FilterTitle>
-                        <FilterSize onChange={(e) => setSize(e.target.value)}>
-                            {detailProduct.size?.map((s) => (
-                                <FilterSizeOption key={s}>{s}</FilterSizeOption>
-                            ))}
+                        {detailProduct.size.map((s) => (
+
+                       <FilterSize>                             
+                                  <label>
+                                    <input type="radio" value={size} onChange={e => setSize(e.target.value)} />
+                                    {s}
+                                  </label>
+                             
                         </FilterSize>
+                      ))}
+
                     </Filter>
                     </FilterContainer>
                      <Button 

@@ -22,6 +22,7 @@
     "googleapis": "^89.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
+    "node-fetch": "^2.6.6",
     "nodemailer": "^6.7.0",
     "stripe": "^8.186.0"
   },
