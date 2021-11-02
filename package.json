@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
     "bcrypt": "^5.0.1",
     "cloudinary": "^1.27.1",
     "concurrently": "^6.3.0",
@@ -21,7 +22,8 @@
     "googleapis": "^89.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.12",
-    "nodemailer": "^6.7.0"
+    "nodemailer": "^6.7.0",
+    "stripe": "^8.186.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.14"

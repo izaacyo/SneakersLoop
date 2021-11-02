@@ -28,6 +28,11 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "https://res.cloudinary.com/dn6ulsxxf/image/upload/v1635164479/user-member-avatar-face-profile-icon-vector-22965342-300x300_ebjhax.jpg"
         },
+
+        cart: {
+            type: Array,
+            default: []
+        }
     },
     { timestamps: true }
 );

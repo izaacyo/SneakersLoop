@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { GlobalState } from '../../../GlobalState'
-import { SearchOutlined, ShoppingCartOutlined, DeleteOutline, EditOutlined} from '@material-ui/icons';
+import { SearchOutlined, DeleteOutline, EditOutlined} from '@material-ui/icons';
 import styled from "styled-components";
 
 
@@ -24,7 +24,6 @@ z-index:555;
 function BtnRender({ product, deleteProduct }) {
     const state = useContext(GlobalState)
     const [isAdmin] = state.userAPI.isAdmin
-    const addCart = state.userAPI.addCart
 
 
     return (

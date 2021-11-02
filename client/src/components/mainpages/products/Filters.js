@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { GlobalState } from '../../../GlobalState'
+import { Search } from "@material-ui/icons"
+
 
 function Filters() {
     const state = useContext(GlobalState)
@@ -31,6 +33,8 @@ function Filters() {
                     }
                 </select>
             </div>
+            <input type="text" value={search} placeholder="Search product"
+                onChange={e => setSearch(e.target.value.toLowerCase())} />
 
             <div className="row sort">
                 <span>Sort By: </span>

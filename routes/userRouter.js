@@ -10,7 +10,7 @@ router.post('/activation', userCtrl.activateEmail)
 
 router.post('/login', userCtrl.login)
 
-router.post('/refresh_token', userCtrl.getAccessToken)
+router.get('/refresh_token', userCtrl.refreshToken)
 
 router.post('/forgot', userCtrl.forgotPassword)
 
@@ -27,6 +27,11 @@ router.patch('/update', auth, userCtrl.updateUser)
 router.patch('/update_role/:id', auth, authAdmin, userCtrl.updateUsersRole)
 
 router.delete('/delete/:id', auth, authAdmin, userCtrl.deleteUser)
+
+router.patch('/addcart', auth, userCtrl.addCart)
+
+router.get('/history', auth, userCtrl.history)
+
 
 
 

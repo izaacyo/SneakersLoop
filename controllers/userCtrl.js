@@ -62,9 +62,20 @@ const userCtrl = {
                 name, email, password
             })
 
+            // Save mongodb
             await newUser.save()
 
-            res.json({ msg: "Account has been activated!" })
+            // Then create jsonwebtoken to authentication
+            const accesstoken = createAccessToken({ id: newUser._id })
+            const refreshtoken = createRefreshToken({ id: newUser._id })
+
+            res.cookie('refreshtoken', refreshtoken, {
+                httpOnly: true,
+                path: '/user/refresh_token',
+                maxAge: 7 * 24 * 60 * 60 * 1000 // 7d
+            })
+
+            res.json({ accesstoken })
 
         } catch (err) {
             return res.status(500).json({ msg: err.message })
@@ -79,19 +90,23 @@ const userCtrl = {
             const isMatch = await bcrypt.compare(password, user.password)
             if (!isMatch) return res.status(400).json({ msg: "Password is incorrect." })
 
-            const refresh_token = createRefreshToken({ id: user._id })
-            res.cookie('refreshtoken', refresh_token, {
+
+            // If login success , create access token and refresh token
+            const accesstoken = createAccessToken({ id: user._id })
+            const refreshtoken = createRefreshToken({ id: user._id })
+
+            res.cookie('refreshtoken', refreshtoken, {
                 httpOnly: true,
                 path: '/user/refresh_token',
                 maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
             })
 
-            res.json({ msg: "Login success!" })
+            res.json({ accesstoken })
         } catch (err) {
             return res.status(500).json({ msg: err.message })
         }
     },
-    getAccessToken: (req, res) => {
+    refreshToken: (req, res) => {
         try {
             const rf_token = req.cookies.refreshtoken
             if (!rf_token) return res.status(400).json({ msg: "Please login now!" })
@@ -99,8 +114,8 @@ const userCtrl = {
             jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
                 if (err) return res.status(400).json({ msg: "Please login now!" })
 
-                const access_token = createAccessToken({ id: user.id })
-                res.json({ access_token })
+                const accesstoken = createAccessToken({ id: user.id })
+                res.json({ accesstoken })
             })
         } catch (err) {
             return res.status(500).json({ msg: err.message })
@@ -139,6 +154,7 @@ const userCtrl = {
     getUserInfor: async (req, res) => {
         try {
             const user = await Users.findById(req.user.id).select('-password')
+            if (!user) return res.status(400).json({ msg: "User does not exist." })
 
             res.json(user)
         } catch (err) {
@@ -196,8 +212,31 @@ const userCtrl = {
             return res.status(500).json({ msg: err.message })
         }
     },
+    addCart: async (req, res) => {
+        try {
+            const user = await Users.findById(req.user.id)
+            if (!user) return res.status(400).json({ msg: "User does not exist." })
 
+            await Users.findOneAndUpdate({ _id: req.user.id }, {
+                cart: req.body.cart
+            })
+
+            return res.json({ msg: "Added to cart" })
+        } catch (err) {
+            return res.status(500).json({ msg: err.message })
+        }
+    },
+    history: async (req, res) => {
+        try {
+            const history = await Payments.find({ user_id: req.user.id })
+
+            res.json(history)
+        } catch (err) {
+            return res.status(500).json({ msg: err.message })
+        }
+    }
 }
+
 
 
 function validateEmail(email) {
