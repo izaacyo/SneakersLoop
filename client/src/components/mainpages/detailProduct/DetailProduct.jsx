@@ -118,6 +118,7 @@ function DetailProduct() {
     const [size, setSize] = useState("");
 
 
+
     useEffect(() => {
         if (params.id) {
 
@@ -153,10 +154,11 @@ function DetailProduct() {
                         </FilterSize>
                     </Filter>
                     </FilterContainer>
-                <Button 
-                        onClick={() => addCart(detailProduct)}>
+                     <Button 
+                         onClick={() => addCart(detailProduct)}>
                         Buy Now
-                    </Button>
+                    </Button> 
+
                     </InfoContainer>
                     <Price>$ {detailProduct.price}</Price>
 

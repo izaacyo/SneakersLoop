@@ -197,15 +197,12 @@ function Cart() {
   }
 
      const tranSuccess = async (payment) => {
-      console.log(token)
-      console.log(payment)
 
          const { paymentID, address } = payment;
   
          await axios.post('/api/payment', { cart, paymentID, address }, {
              headers: { Authorization: token }
          })
- console.log(cart)
          setCart([])
          addToCart([])
          alert("You have successfully placed an order.")
