@@ -96,18 +96,59 @@ const Hr = styled.hr`
   height: 1px;
 `;
 
+const ProductAmount = styled.div`
+  font-size: 20px;
+  margin: 5px;
+  ${mobile({ margin: "5px 15px" })}
+`;
+
+const Summary = styled.div`
+  flex: 1;
+  border: 0.5px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  height: 50vh;
+`;
+
+const SummaryTitle = styled.h1`
+  font-weight: 200;
+`;
+
+const SummaryItem = styled.div`
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: ${(props) => props.type === "total" && "500"};
+  font-size: ${(props) => props.type === "total" && "24px"};
+`;
+
+const SummaryItemText = styled.span``;
+
+const SummaryItemPrice = styled.span``;
+
+const Button = styled.button`
+  width: 100%;
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+`;
+
+const Delete = styled.div`
+position: absolute;
+margin:15px;
+color: crimson;
+font-weight: 900;
+cursor: pointer;
+`
+
 function Cart() {
     const state = useContext(GlobalState)
     const [cart, setCart] = state.userAPI.cart
     const [token] = state.token
     const [total, setTotal] = useState(0)
-    const [stripeToken, setStripeToken] = useState(null);
 
 
-    const onToken = (token) => {
-        setStripeToken(token);
-      };
-    
 
     useEffect(() => {
         const getTotal = () => {
@@ -166,13 +207,14 @@ function Cart() {
 
        const tranSuccess = async (payment) => {
            const { paymentID, address } = payment;
+           console.log(token)
    
            await axios.post('/api/payment', { cart, paymentID, address }, {
                headers: { Authorization: token }
            })
    
-           setCart([])
-           addToCart([])
+           setCart([...cart])
+           addToCart(cart)
            alert("You have successfully placed an order.")
        }
 
@@ -216,7 +258,9 @@ function Cart() {
                         <ProductAmountContainer>
                             
                         <button onClick={() => decrement(product._id)}> <Remove/> </button>
-                                <span>{product.quantity}</span>
+
+                                <ProductAmount>{product.quantity}</ProductAmount>
+
                                 <button onClick={() => increment(product._id)}> <Add/> </button>     
                         </ProductAmountContainer>
 
@@ -224,27 +268,40 @@ function Cart() {
 
                         $ {product.price * product.quantity}
                         </ProductPrice>
-
                     </PriceDetail>
-
-
-                            <div className="delete"
-                                onClick={() => removeProduct(product._id)}>
+                    <Delete onClick={() => removeProduct(product._id)}>
                                 X
-                            </div>
+                                </Delete>
                     </Product>
+                    
                 ))}
             <Hr />
+            </Info>
+
+            <Summary>
+            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
+            <SummaryItem>
+              <SummaryItemText>Subtotal</SummaryItemText>
+              <SummaryItemPrice>$ {total}</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Estimated Shipping</SummaryItemText>
+              <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem>
+              <SummaryItemText>Shipping Discount</SummaryItemText>
+              <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+            </SummaryItem>
+            <SummaryItem type="total">
+              <SummaryItemText>Total</SummaryItemText>
+              <SummaryItemPrice>$ {total}</SummaryItemPrice>
+            </SummaryItem>
+
+            <Button>CHECKOUT NOW</Button>
+            </Summary>
 
 
-            <div className="total">
-                <h3>Total: $ {total}</h3>
-                <PaypalButton
-                total={total}
-                tranSuccess={tranSuccess} />
-            </div>
-
-                </Info>
+               
               </Bottom>
             </Wrapper>
 

@@ -15,13 +15,13 @@ function App() {
     const dispatch = useDispatch()
     const token = useSelector(state => state.token)
     const auth = useSelector(state => state.auth)
-    console.log(token, auth)
+    console.log(auth)
 
     useEffect(() => {
         const firstLogin = localStorage.getItem('firstLogin')
         if (firstLogin) {
             const getToken = async () => {
-                const res = await axios.get('/user/refresh_token', token)
+                const res = await axios.get('/user/refresh_token')
                 dispatch({ type: 'GET_TOKEN', payload: res.data.accesstoken })
             }
             getToken()

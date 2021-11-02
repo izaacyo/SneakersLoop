@@ -16,6 +16,7 @@ display: flex;
 align-items: center`; 
 
 const Language = styled.span`
+margin:30px;
 font-size:14px;
 cursor:pointer;
 ${mobile({display:"none"})}
@@ -89,7 +90,8 @@ const handleLogout = async () =>  {
 }
 
 const userLink = () => {
-    return  <li className="drop-nav">
+    return <>
+     <li className="drop-nav">
               <Link style={linkStyle} to="#" className="avatar">
                  <Img src={user.avatar} alt=""/> {user.name} <i className="fas fa-angle-down"></i>
               </Link>
@@ -99,6 +101,9 @@ const userLink = () => {
                   <li><Link to="/" onClick={handleLogout} >Logout</Link></li>
                    </ul>
                </li>
+               <Link style={{textDecoration:"none", margin:"50px"}} to="/cart"><i className="fas fa-shopping-cart">
+               </i></Link> 
+               </>
 }
 
 const adminRouter = () =>{
@@ -125,10 +130,8 @@ return (
                  <Language>
                      EN
                  </Language>
-                 <SearchContainer>
-                     <Input  type="text"placeholder="Search"/>
-                     <Search style={{color:"gray", fontSize:16}}/>
-                 </SearchContainer>
+                 <Link to="/products">{isAdmin ? 'Products' : 'Shop'}</Link>
+
              </Left>
              <Center>
                  <Link to="/">
@@ -139,7 +142,6 @@ return (
              
 <Right>
              <ul style={styleMenu}>
-                <li><Link to="/products">{isAdmin ? 'Products' : 'Shop'}</Link></li>
 
                 {isAdmin && adminRouter()}
 

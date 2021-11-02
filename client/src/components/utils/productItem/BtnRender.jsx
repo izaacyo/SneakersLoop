@@ -47,11 +47,6 @@ function BtnRender({ product, deleteProduct }) {
                     </>
                     : <>
                         <Icon>
-                            <Link to="#!" onClick={() => addCart(product)}>
-                                <ShoppingCartOutlined />
-                            </Link>
-                        </Icon>
-                        <Icon>
                             <Link to={`/detail/${product._id}`}>
                                 <SearchOutlined />
                             </Link>

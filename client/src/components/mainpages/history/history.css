@@ -1,4 +1,6 @@
 .history-page {
+  margin-top: 17rem;
+  margin-bottom: 5rem;
   overflow-x: auto;
 }
 .history-page h2,
