@@ -50,21 +50,21 @@ function Filters() {
                 <span>Size: </span>
                 <select name="size" value={size} onChange={e => setSize(e.target.value)} >
                     <option value='all'>All</option>
-                    <option value='31'>31</option>
-                    <option value='32'>32</option>
-                    <option value='33'>33</option>
-                    <option value='34'>34</option>
-                    <option value='35'>35</option>
-                    <option value='36'>36</option>
-                    <option value='37'>37</option>
-                    <option value='38'>38</option>
-                    <option value='39'>39</option>
+                    <option value='size=31'>31</option>
+                    <option value='size=32'>32</option>
+                    <option value='size=33'>33</option>
+                    <option value='size=34'>34</option>
+                    <option value='size=35'>35</option>
+                    <option value='size=36'>36</option>
+                    <option value='size=37'>37</option>
+                    <option value='size=38'>38</option>
+                    <option value='size=39'>39</option>
                     <option value='size=40'>40</option>
-                    <option value='41'>41</option>
-                    <option value='42'>42</option>
-                    <option value='43'>43</option>
-                    <option value='44'>44</option>
-                    <option value='45'>45</option>
+                    <option value='size=41'>41</option>
+                    <option value='size=42'>42</option>
+                    <option value='size=43'>43</option>
+                    <option value='size=44'>44</option>
+                    <option value='size=45'>45</option>
                 </select>
             </div>
         </div>
