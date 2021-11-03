@@ -165,10 +165,8 @@ function CreateProduct() {
 
                 <div className="row">
                     <label htmlFor="size">Size</label>
-                    <select name="size" value={product.size} onChange={handleChangeInput}  >
-                        <option value={product.size}>Please select sizes available</option>
-
-                    </select>
+                    <input type="number" name="size" id="size" required
+                        value={product.size} onChange={handleChangeInput} />
                 </div>
 
                 <div className="row">

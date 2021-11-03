@@ -114,7 +114,6 @@ function DetailProduct() {
     const [products] = state.productsAPI.products
     const addCart = state.userAPI.addCart
     const [detailProduct, setDetailProduct] = useState([])
-    const [size, setSize] = useState("");
 
 
 
@@ -125,12 +124,12 @@ function DetailProduct() {
                 if (product._id === params.id) setDetailProduct(product)
             })
         }
-    }, [params.id, size, products])
-
+    }, [params.id, products])
 
 
 
     if (detailProduct.length === 0) return "null";
+
 
     return (
         <Container>
@@ -149,22 +148,24 @@ function DetailProduct() {
                     <Filter>
 
                         <FilterTitle>Size</FilterTitle>
-                        {detailProduct.size.map((s) => (
+                        <FilterSize>{detailProduct.size}</FilterSize>
+                       
+                       {/*  {detailProduct.size.map((s) => (
 
                        <FilterSize>                             
-                                  <label>
-                                    <input type="radio" value={size} onChange={e => setSize(e.target.value)} />
+                                  <div role="radiogroup">
+                                    <button role="radio" aria-checked="false" onClick={setSize()}/>
                                     {s}
-                                  </label>
+                                  </div>
                              
                         </FilterSize>
-                      ))}
+                      ))}*/}
 
                     </Filter>
                     </FilterContainer>
                      <Button 
                          onClick={() => addCart(detailProduct)}>
-                        Buy Now
+                        Add to cart
                     </Button> 
 
                     </InfoContainer>

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { GlobalState } from '../../../GlobalState'
 import axios from 'axios'
+import "./categories.css"
 
 function Categories() {
     const state = useContext(GlobalState)
@@ -55,8 +56,8 @@ function Categories() {
     return (
         <div className="categories">
             <form onSubmit={createCategory}>
-                <label htmlFor="category">Category</label>
-                <input type="text" name="category" value={category} required
+                <label htmlFor="category">Create Category</label>
+                <input type="text" name="category" placeholder="Define your category" value={category} required
                     onChange={e => setCategory(e.target.value)} />
 
                 <button type="submit">{onEdit ? "Update" : "Create"}</button>

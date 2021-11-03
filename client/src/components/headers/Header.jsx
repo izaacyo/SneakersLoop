@@ -103,10 +103,6 @@ const adminRouter = () =>{
 }
 
 
-/*const transForm = {
-    transform: isLogged ? "translateY(-5px)" : 0
-}*/
-
 const styleMenu = {
     left: menu ? 0 : "-100%"
 }

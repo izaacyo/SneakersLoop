@@ -131,7 +131,7 @@ function Profile() {
 
     return (
         <>
-            <div>
+            <div className="col-right">
                 {err && showErrMsg(err)}
                 {success && showSuccessMsg(success)}
                 {loading && <h3>Loading.....</h3>}
@@ -183,7 +183,7 @@ function Profile() {
                     <button disabled={loading} onClick={handleUpdate}>Update</button>
                 </div>
 
-                {/*                <div className="col-right">
+                <div className="col-right">
                     <h2>{isAdmin ? "Users" : "My Orders"}</h2>
 
                     <div style={{ overflowX: "auto" }}>
@@ -224,7 +224,7 @@ function Profile() {
                             </tbody>
                         </table>
                     </div>
-                            */}
+                </div>
             </div>
         </>
     )

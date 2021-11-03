@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 30px auto;
+  margin: 20rem auto;
 }
 .categories form {
   width: 290px;
@@ -22,6 +22,7 @@ button {
   border: none;
   outline: none;
   border-bottom: 1px solid #555;
+  margin-top: 15px;
 }
 .categories input {
   width: 210px;
