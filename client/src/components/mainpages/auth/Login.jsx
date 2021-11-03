@@ -24,6 +24,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top:15rem
   `
 
   const Wrapper = styled.div`
@@ -53,7 +54,7 @@ const Input = styled.input`
 const Button = styled.button`
   width: 40%;
   border: none;
-  padding: 15px 20px;
+  padding: 10px 20px;
   background-color: teal;
   color: white;
   cursor: pointer;
@@ -224,7 +225,7 @@ const responseFacebook = async (response) => {
                 callback={responseFacebook} 
                 />
     
-        <p>New Customer? <Link to="/register">Register</Link></p>
+        <p style={{padding: '10px 0'}}>New Customer? <Link to="/register">Register</Link></p>
 
       </Wrapper>
     </Container>

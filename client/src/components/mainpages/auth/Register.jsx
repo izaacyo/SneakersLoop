@@ -19,6 +19,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top:15rem
 `;
 
 const Wrapper = styled.div`
@@ -26,6 +27,8 @@ const Wrapper = styled.div`
   padding: 20px;
   background-color: white;
   ${mobile({ width: "75%" })}
+  margin-top:5rem
+
 `;
 
 const Title = styled.h1`
@@ -36,6 +39,7 @@ const Title = styled.h1`
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
+
 `;
 
 const Input = styled.input`
@@ -139,9 +143,9 @@ const handleSubmit = async e => {
                       By creating an account, I consent to the processing of my personal data in accordance with the <b>PRIVACY POLICY</b>
                   </Agreement>
 
-                  <Button type="submit">CREATE</Button>
+                  <Button style={{padding: '10px 0'}} type="submit">CREATE</Button>
                 </Form>
-                <p>Already an account? <Link style={linkStyle} to="/login">Login</Link></p>
+                <p style={{padding: '10px 0'}}>Already an account? <Link style={linkStyle} to="/login">Login</Link></p>
 
             </Wrapper>
         </Container>

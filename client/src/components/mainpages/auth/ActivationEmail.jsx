@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 width: 95%;
 padding: 20px;
 background-color: white;
+margin-top:15rem
 `;
 
 const linkStyle = { 
