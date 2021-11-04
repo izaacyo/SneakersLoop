@@ -186,7 +186,6 @@ const responseFacebook = async (response) => {
       <Wrapper>
         <Title>Login</Title>
         
-        {err && showErrMsg(err)}
         {success && showSuccessMsg(success)}
         <Form onSubmit={loginSubmit}>
           <Input type="text" 
