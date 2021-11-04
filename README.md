@@ -2,7 +2,9 @@
 
 This project is done for Demo Day hold in Business College Helsinki where students have a chance to present the knowledge gathered during their studies in front of companies' representatives. It is a Ecommerce website that I dreamed to have as a kid, my own online sneakers shop.
 
-*This project is in development phase*
+*Link to the demo website*
+[SneakersLoop](https://dashboard.heroku.com/apps/sneakersloop/deploy/heroku-git)
+
 ## Technologies used
 
 Build with : 
@@ -13,12 +15,16 @@ Build with :
 - Express
 - NodeJS
 - CSS
-- Blockchain
+- Paypal
 
 Hosted on :
-- AWS
+- Heroku
 
-## Setup and usage
+## Setup and usage : 
+- Clone the repository
+- npm install
+- Install the dependencies from package.json
+- For Google and Facebook registration you have to get your own credentials from developers' website and add them in an .env file accordingly 
 
 ## Sources
 
@@ -27,5 +33,3 @@ Hosted on :
 ## Authors and acknowledgment
 
 - Author: Popa Marius [Github](https://github.com/izaacyo) [LinkedIn](https://www.linkedin.com/in/popamariuspetrut/)
-
-- Coordinator teacher: Margit Tennosaar [Github](https://github.com/margittennosaar) [LinkedIn](https://www.linkedin.com/in/margittennosaar/)
