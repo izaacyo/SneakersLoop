@@ -3,7 +3,7 @@
 This project is done for Demo Day hold in Business College Helsinki where students have a chance to present the knowledge gathered during their studies in front of companies' representatives. It is a Ecommerce website that I dreamed to have as a kid, my own online sneakers shop.
 
 *Link to the demo website*
-[SneakersLoop](https://dashboard.heroku.com/apps/sneakersloop/deploy/heroku-git)
+[SneakersLoop](https://sneakersloop.herokuapp.com/)
 
 ## Technologies used
 
