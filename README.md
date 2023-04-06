@@ -26,7 +26,6 @@ Hosted on :
 - Clone the repository
 - npm install
 - Install the dependencies from package.json
-- For Google and Facebook registration you have to get your own credentials from developers' website and add them in an .env file accordingly 
 
 ## Sources
 
