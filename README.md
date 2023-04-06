@@ -5,6 +5,8 @@ This project is done for Demo Day hold in Business College Helsinki where studen
 *Link to the demo website*
 [SneakersLoop](https://sneakersloop.herokuapp.com/)
 
+Update: Heroku free trial has ended, and backend has been moved to Render.com . However, there are issues with CORS policy on Login that are about to be solved. 
+
 ## Technologies used
 
 Build with : 
